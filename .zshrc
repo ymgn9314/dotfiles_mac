@@ -146,7 +146,3 @@ if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
 		exec arch -arch $arch /bin/zsh
 	}
 fi
-
-# rbenv
-eval "$(rbenv init -)"
-
