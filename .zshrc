@@ -123,6 +123,7 @@ setopt magic_equal_subst
 # パス
 export PATH="$PATH:$HOME/development/flutter/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # M1 homebrew設定(https://zenn.dev/ress/articles/069baf1c305523dfca3d)
 typeset -U path PATH
@@ -148,3 +149,4 @@ fi
 
 # rbenv
 eval "$(rbenv init -)"
+
