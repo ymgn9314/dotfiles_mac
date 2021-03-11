@@ -124,7 +124,7 @@ setopt magic_equal_subst
 export PATH="$PATH:$HOME/development/flutter/bin"
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
-# M1 homebrew設定
+# M1 homebrew設定(https://zenn.dev/ress/articles/069baf1c305523dfca3d)
 typeset -U path PATH
 path=(
 	/opt/homebrew/bin(N-/)
