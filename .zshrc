@@ -122,7 +122,7 @@ setopt magic_equal_subst
 
 # パス
 export PATH="$PATH:$HOME/development/flutter/bin"
-export PATH="$PATH:/Users/ymgn/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # M1 homebrew設定
 typeset -U path PATH
