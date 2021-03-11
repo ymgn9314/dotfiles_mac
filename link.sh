@@ -1,9 +1,21 @@
-#!/bin/sh
+#!/bin/zsh
 
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
+set -u
+
+BASEDIR=$(dirname $0)
 HOME_DIR=${HOME}
 
-ln -sf $SCRIPT_DIR/.zshrc $HOME_DIR/
-# source $HOME_DIR/.zshrc
+cd $BASEDIR
 
-echo ".zshrc linked."
+for f in .??*; do
+    [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitconfig.local.template" ] && continue
+    [ "$f" = ".gitmodules" ] && continue
+
+    # シンボリックリンクを貼る
+    ln -snfv ${PWD}/"$f" $HOME_DIR
+done
+
+source $HOME_DIR/.zshrc
+
+echo "dotfiles linked."
