@@ -124,6 +124,10 @@ setopt magic_equal_subst
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# openjdk
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # M1 homebrew設定(https://zenn.dev/ress/articles/069baf1c305523dfca3d)
 typeset -U path PATH
