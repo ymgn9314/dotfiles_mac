@@ -19,35 +19,6 @@ autoload -U compinit && compinit -u
 # git のカラー表示
 git config --global color.ui auto
 
-# エイリアス
-alias his='history'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-# エイリアス: git 系
-alias g='git'
-alias gs='git status'
-alias gb='git branch'
-alias gc='git checkout'
-alias gct='git commit'
-alias gg='git grep'
-alias ga='git add'
-alias gd='git diff'
-alias gl='git log'
-alias gcma='git checkout master'
-alias gfu='git fetch upstream'
-alias gfo='git fetch origin'
-alias gmod='git merge origin/develop'
-alias gmud='git merge upstream/develop'
-alias gmom='git merge origin/master'
-alias gcm='git commit -m'
-alias gpo='git push origin'
-alias gpom='git push origin master'
-alias gst='git stash'
-alias gsl='git stash list'
-alias gsu='git stash -u'
-alias gsp='git stash pop'
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -69,8 +40,8 @@ setopt auto_pushd
 
 # ヒストリ (履歴) を保存、数を増やす
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100
+SAVEHIST=100
 
 # 同時に起動した zsh の間でヒストリを共有する
 setopt share_history
@@ -124,10 +95,6 @@ setopt magic_equal_subst
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/fvm/default/bin"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-
-# openjdk
-export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # M1 homebrew設定(https://zenn.dev/ress/articles/069baf1c305523dfca3d)
 typeset -U path PATH
@@ -150,3 +117,13 @@ if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
 		exec arch -arch $arch /bin/zsh
 	}
 fi
+
+# openjdk
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+#anyenv
+eval "$(anyenv init -)"
+
+# nodenv
+export PATH=$PATH:`npm bin -g`
