@@ -56,6 +56,8 @@ setopt correct
 setopt pushd_ignore_dups
 setopt extended_glob
 setopt magic_equal_subst
+setopt no_beep
+setopt nolistbeep
 
 # zstyle
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
