@@ -90,11 +90,8 @@ if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
 	}
 fi
 
-# zshcompile
-if [ ~/.zshrc -nt ~/.zshrc.zwc -o ! -e ~/.zshrc.zwc ]; then
-	echo "zcompile exec."
-	zcompile ~/.zshrc
-fi
+# zcompile
+[[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]] && zcompile ~/.zshrc
 
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
