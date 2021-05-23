@@ -3,19 +3,18 @@
 set -u
 
 BASEDIR=$(dirname $0)
-HOME_DIR=${HOME}
-
 cd $BASEDIR
 
+echo "create symbolic link."
 for f in .??*; do
     [ "$f" = ".git" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
 
     # create symbolic link
-    ln -snfv ${PWD}/"$f" $HOME_DIR
+    ln -snfv ${PWD}/"$f" ${HOME}
 done
 
-source $HOME_DIR/.zshrc
-
+echo ""
 echo "dotfiles installed."
+exec $SHELL -l
