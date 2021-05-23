@@ -12,10 +12,10 @@ for f in .??*; do
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
 
-    # シンボリックリンクを貼る
+    # create symbolic link
     ln -snfv ${PWD}/"$f" $HOME_DIR
 done
 
 source $HOME_DIR/.zshrc
 
-echo "dotfiles linked."
+echo "dotfiles installed."
