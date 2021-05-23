@@ -6,6 +6,14 @@
 #      /\___/                /\____/
 #      \/__/                 \_/__/
 
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # load .zsh/*zsh
 ZSHHOME="${HOME}/.zsh"
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
@@ -46,7 +54,6 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt correct
-setopt auto_pushd
 setopt pushd_ignore_dups
 setopt extended_glob
 setopt magic_equal_subst
@@ -88,6 +95,10 @@ if [ ~/.zshrc -nt ~/.zshrc.zwc -o ! -e ~/.zshrc.zwc ]; then
 	echo "zcompile exec."
 	zcompile ~/.zshrc
 fi
+
+# p10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # path
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
