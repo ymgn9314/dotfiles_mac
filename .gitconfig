@@ -1,0 +1,18 @@
+[color]
+	ui = auto
+[user]
+	name = ymgn9314
+	email = yamagen.private@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	pager = less -F -X
+	editor = code --wait
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
