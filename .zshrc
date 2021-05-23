@@ -6,6 +6,16 @@
 #      /\___/                /\____/
 #      \/__/                 \_/__/
 
+# load .zsh/*zsh
+ZSHHOME="${HOME}/.zsh"
+if [ -d $ZSHHOME -a -r $ZSHHOME -a \
+     -x $ZSHHOME ]; then
+    for i in $ZSHHOME/*; do
+        [[ ${i##*/} = *.zsh ]] &&
+            [ \( -f $i -o -h $i \) -a -r $i ] && . $i
+    done
+fi
+
 # autoload
 autoload -U compinit && compinit -u
 autoload -Uz colors && colors
@@ -51,7 +61,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 
-# M1 homebrew設定(https://zenn.dev/ress/articles/069baf1c305523dfca3d)
+# M1 homebrew settings: (https://zenn.dev/ress/articles/069baf1c305523dfca3d)
 typeset -U path PATH
 path=(
 	/opt/homebrew/bin(N-/)
@@ -83,11 +93,11 @@ fi
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/fvm/default/bin"
-
+## openjdk
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-
+## anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - --no-rehash)"
-
+## npm
 export PATH=$PATH:`npm bin -g`
