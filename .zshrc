@@ -6,7 +6,6 @@
 #      /\___/                /\____/
 #      \/__/                 \_/__/
 
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -25,7 +24,7 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
 fi
 
 # autoload
-autoload -U compinit && compinit -u
+autoload -Uz compinit && compinit -C
 autoload -Uz colors && colors
 
 # pager
