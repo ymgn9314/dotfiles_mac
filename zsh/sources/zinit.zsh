@@ -12,4 +12,3 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 ## asdf-vm/asdf
 zinit light asdf-vm/asdf
-zinit cdclear -q

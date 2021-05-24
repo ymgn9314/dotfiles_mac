@@ -14,6 +14,5 @@ SAVEHIST=100
 
 # setopt
 setopt menu_complete
-setopt magic_equal_subst
 setopt no_beep
 setopt nolistbeep
