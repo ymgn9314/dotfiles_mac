@@ -12,3 +12,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 ## asdf-vm/asdf
 zinit light asdf-vm/asdf
+
+## zsh-users/zsh-completions
+zinit ice wait'!0'; zinit light zsh-users/zsh-completions
