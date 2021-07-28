@@ -346,6 +346,9 @@
   # Change the value of this parameter to show a different icon.
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
+  # branch foreground color
+  typeset -g POWERLEVEL9K_VCS_BRANCH='%76F'
+
   # Formatter for Git status.
   #
   # Example output: master ⇣42⇡42 *42 merge ~42 +42 !42 ?42.
@@ -367,7 +370,7 @@
     if (( $1 )); then
       # Styling for up-to-date Git status.
       local       meta='%250F'  # grey foreground
-      local      clean='%76F'   # green foreground
+      local      clean=$POWERLEVEL9K_VCS_BRANCH  # green foreground
       local   modified='%178F'  # yellow foreground
       local  untracked='%39F'   # blue foreground
       local conflicted='%196F'  # red foreground
